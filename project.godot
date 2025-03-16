@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Biggest Bake Off"
-run/main_scene="res://scenes/opening/opening_with_logo.tscn"
+run/main_scene="uid://deu3fhqkb4m45"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
