@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0idf543454oq"
-path="res://.godot/imported/chef_walk.png-c9c65fcec6599ab9dbd87f5ba094645c.ctex"
+uid="uid://cui7fa3ccko5t"
+path="res://.godot/imported/chef_idle.png-3a324b934316e05b4412cf6b057ef2b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chef_walk.png"
-dest_files=["res://.godot/imported/chef_walk.png-c9c65fcec6599ab9dbd87f5ba094645c.ctex"]
+source_file="res://assets/Characters/chef_idle.png"
+dest_files=["res://.godot/imported/chef_idle.png-3a324b934316e05b4412cf6b057ef2b5.ctex"]
 
 [params]
 
