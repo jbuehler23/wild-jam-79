@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3ab284l3yd4r"]
+[gd_scene load_steps=20 format=3 uid="uid://d3ab284l3yd4r"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_6btwc"]
 [ext_resource type="Script" uid="uid://bryarst7qsas4" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_rr1rn"]
 [ext_resource type="Theme" uid="uid://bsjq1un80qdo4" path="res://resources/themes/lab.tres" id="2_sr523"]
 [ext_resource type="PackedScene" uid="uid://dfycb1h41yhrw" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_sr523"]
 [ext_resource type="PackedScene" uid="uid://da7uj8u87g24i" path="res://scenes/credits/credits.tscn" id="4_ixa71"]
+[ext_resource type="FontFile" uid="uid://bx0hkcp7o8jhs" path="res://assets/Fonts/Kenney Mini.ttf" id="6_ixa71"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -368,6 +369,9 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="VersionMargin" parent="." index="5"]
+visible = false
+
 [node name="VersionContainer" parent="VersionMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
 
@@ -375,7 +379,14 @@ modulate = Color(1, 1, 1, 0)
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
+offset_top = 75.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("6_ixa71")
+theme_override_font_sizes/font_size = 72
 text = "Biggest Bake Off"
+
+[node name="SubTitleMargin" parent="MenuContainer" index="1"]
+visible = false
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
