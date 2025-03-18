@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnen2vkc2lqpd"]
+
+[ext_resource type="Script" uid="uid://c88ceg86j5g3f" path="res://scripts/mini_games/button_smash_manager.gd" id="1_afy0d"]
+[ext_resource type="Theme" uid="uid://bsjq1un80qdo4" path="res://resources/themes/lab.tres" id="2_a3yk1"]
+[ext_resource type="Script" uid="uid://kdrlypenxvwq" path="res://scripts/mini_games/button_handler.gd" id="3_5rhnq"]
+[ext_resource type="Script" uid="uid://btqwl7k45srp" path="res://scripts/mini_games/timer_handler.gd" id="4_584di"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_afy0d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.187
+anchor_bottom = 0.233
+offset_right = 0.639984
+offset_bottom = 0.23999
+
+[node name="Mash" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.426
+anchor_right = 0.5
+anchor_bottom = 0.426
+offset_left = -24.0
+offset_top = -23.568
+offset_right = 24.0
+offset_bottom = 23.432
+theme = ExtResource("2_a3yk1")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Q"
+script = ExtResource("3_5rhnq")
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.747
+anchor_right = 0.5
+anchor_bottom = 0.747
+offset_left = -48.0
+offset_top = -13.496
+offset_right = 48.0
+offset_bottom = 13.504
+theme = ExtResource("2_a3yk1")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="Control"]
+unique_name_in_owner = true
+script = ExtResource("4_584di")
+
+[node name="TimeRemainingLabel" type="Label" parent="Control/Timer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.094
+anchor_right = 0.034
+anchor_bottom = 0.094
+offset_left = -19.52
+offset_top = -11.68
+offset_right = 20.48
+offset_bottom = 11.32
+
+[node name="ResultLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.164
+anchor_right = 0.5
+anchor_bottom = 0.164
+offset_left = -32.0
+offset_top = -11.552
+offset_right = 34.0
+offset_bottom = 11.448
+text = "Result"
