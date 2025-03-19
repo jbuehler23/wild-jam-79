@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnen2vkc2lqpd"]
 
-[ext_resource type="Script" uid="uid://c88ceg86j5g3f" path="res://scripts/mini_games/button_smash_manager.gd" id="1_afy0d"]
-[ext_resource type="Theme" uid="uid://bsjq1un80qdo4" path="res://resources/themes/lab.tres" id="2_a3yk1"]
-[ext_resource type="Script" uid="uid://kdrlypenxvwq" path="res://scripts/mini_games/button_handler.gd" id="3_5rhnq"]
-[ext_resource type="Script" uid="uid://btqwl7k45srp" path="res://scripts/mini_games/timer_handler.gd" id="4_584di"]
+[ext_resource type="Script" uid="uid://c88ceg86j5g3f" path="res://scripts/mini_games/kneading/button_smash_manager.gd" id="1_lr75c"]
+[ext_resource type="Theme" uid="uid://bsjq1un80qdo4" path="res://resources/themes/lab.tres" id="2_fj5mx"]
+[ext_resource type="Script" uid="uid://kdrlypenxvwq" path="res://scripts/mini_games/kneading/button_handler.gd" id="3_a2bco"]
+[ext_resource type="Script" uid="uid://btqwl7k45srp" path="res://scripts/mini_games/kneading/timer_handler.gd" id="4_piwv1"]
 
 [node name="GameManager" type="Node"]
-script = ExtResource("1_afy0d")
+script = ExtResource("1_lr75c")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -27,11 +27,11 @@ offset_left = -24.0
 offset_top = -23.568
 offset_right = 24.0
 offset_bottom = 23.432
-theme = ExtResource("2_a3yk1")
+theme = ExtResource("2_fj5mx")
 shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Q"
-script = ExtResource("3_5rhnq")
+script = ExtResource("3_a2bco")
 
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 unique_name_in_owner = true
@@ -45,12 +45,12 @@ offset_left = -48.0
 offset_top = -13.496
 offset_right = 48.0
 offset_bottom = 13.504
-theme = ExtResource("2_a3yk1")
+theme = ExtResource("2_fj5mx")
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="Control"]
 unique_name_in_owner = true
-script = ExtResource("4_584di")
+script = ExtResource("4_piwv1")
 
 [node name="TimeRemainingLabel" type="Label" parent="Control/Timer"]
 unique_name_in_owner = true
