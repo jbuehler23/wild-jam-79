@@ -59,7 +59,7 @@ func end_game() -> void:
 	mixing_speed_timer.stop()
 	
 	if (mixing_progress.value >= 90):
-		result_label.text = "Pefect Mix!"
+		result_label.text = "Perfect Mix!"
 	elif (mixing_progress.value >= 60):
 		result_label.text = "Decent Mix!"
 	else:
