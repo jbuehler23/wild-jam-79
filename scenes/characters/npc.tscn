@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqrbs177oosb"]
+
+[ext_resource type="SpriteFrames" uid="uid://bh1u3g8nidnwb" path="res://scenes/characters/contestant1_frames.tres" id="1_ceaqc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4i115"]
+radius = 4.5
+
+[node name="Npc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("1_ceaqc")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_4i115")
