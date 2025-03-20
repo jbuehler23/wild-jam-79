@@ -7,3 +7,4 @@
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_uvr3r")
+frame_progress = 0.437967
