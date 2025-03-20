@@ -1148,10 +1148,11 @@ sources/1 = SubResource("TileSetAtlasSource_bbjjs")
 [node name="TestLevel" type="Node2D"]
 
 [node name="Chef" parent="." instance=ExtResource("3_ah068")]
-position = Vector2(274, 311)
+position = Vector2(172, 316)
+collision_mask = 8
 
 [node name="Camera2D" type="Camera2D" parent="Chef"]
-position = Vector2(109, 21)
+position = Vector2(0, -9)
 zoom = Vector2(3, 3)
 
 [node name="Node" type="Node" parent="Chef"]
