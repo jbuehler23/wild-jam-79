@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://28ai8wyfjqb5"]
+
+[ext_resource type="PackedScene" uid="uid://dvqrbs177oosb" path="res://scenes/characters/npc.tscn" id="1_8pq0j"]
+[ext_resource type="SpriteFrames" uid="uid://d25ntv2u1x225" path="res://scenes/characters/contestant3_frames.tres" id="2_co1pp"]
+
+[node name="Contestant3" instance=ExtResource("1_8pq0j")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_co1pp")

@@ -1,0 +1,93 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bqaf2gr2rudov"]
+
+[ext_resource type="Texture2D" uid="uid://ds8mvfj10gsg2" path="res://assets/Characters/contestant_2.png" id="1_s43fw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5no0"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(288, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ludx"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(304, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4do"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(320, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhscs"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(336, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r0wy"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81xdj"]
+atlas = ExtResource("1_s43fw")
+region = Rect2(368, 32, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5no0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ludx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhscs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r0wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81xdj")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_left",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_right",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle_up",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"reading",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_down",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_left",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_right",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_up",
+"speed": 10.0
+}]
