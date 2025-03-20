@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4nuydcyj123"]
+
+[ext_resource type="PackedScene" uid="uid://dvqrbs177oosb" path="res://scenes/characters/npc.tscn" id="1_ns2hq"]
+[ext_resource type="SpriteFrames" uid="uid://d4aeq5aglrwl5" path="res://scenes/characters/judge2_frames.tres" id="2_ns2hq"]
+
+[node name="Judge1" instance=ExtResource("1_ns2hq")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_ns2hq")

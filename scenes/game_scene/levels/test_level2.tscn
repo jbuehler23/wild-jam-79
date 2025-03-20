@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bhc1m1ighsmrp"]
+[gd_scene load_steps=13 format=4 uid="uid://bhc1m1ighsmrp"]
 
 [ext_resource type="TileSet" uid="uid://4xf5e3j5o3xw" path="res://scenes/game_scene/tilesets/base_tiles.tres" id="1_3epbw"]
 [ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="2_yoesb"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://h3wj1fpbdtim" path="res://scenes/characters/chef.tscn" id="5_28t6n"]
 [ext_resource type="PackedScene" uid="uid://cxu2iu6ykt7b4" path="res://scenes/characters/contestant1.tscn" id="7_damlv"]
 [ext_resource type="PackedScene" uid="uid://28ai8wyfjqb5" path="res://scenes/characters/contestant3.tscn" id="7_y4apq"]
+[ext_resource type="PackedScene" uid="uid://b4jrbjw400xal" path="res://scenes/characters/judge1.tscn" id="8_28t6n"]
+[ext_resource type="PackedScene" uid="uid://ch4nuydcyj123" path="res://scenes/characters/judge2.tscn" id="9_xnkj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7a7s"]
 texture = ExtResource("2_yoesb")
@@ -1180,10 +1182,16 @@ position = Vector2(288, 256)
 collision_mask = 3
 
 [node name="Contestant3" parent="YSort" instance=ExtResource("7_y4apq")]
-position = Vector2(544, 256)
+position = Vector2(576, 256)
 
 [node name="Contestant1" parent="YSort" instance=ExtResource("7_damlv")]
 position = Vector2(432, 255)
+
+[node name="Judge1" parent="YSort" instance=ExtResource("8_28t6n")]
+position = Vector2(400, 384)
+
+[node name="Judge2" parent="YSort" instance=ExtResource("9_xnkj4")]
+position = Vector2(448, 384)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(432, 272)
