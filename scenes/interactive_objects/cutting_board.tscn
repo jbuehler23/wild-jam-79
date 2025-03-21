@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://3l6jplpcr20v"]
+[gd_scene load_steps=7 format=3 uid="uid://3l6jplpcr20v"]
 
 [ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="1_1p0e8"]
 [ext_resource type="Script" uid="uid://c2uq3b5nqtqdi" path="res://scripts/interactive_objects/cutting_board.gd" id="2_menxj"]
+[ext_resource type="Script" uid="uid://wcf4lks8ide" path="res://scripts/interactive_objects/canvas_layer.gd" id="3_a013e"]
+[ext_resource type="PackedScene" uid="uid://bkovyf5203yfq" path="res://scenes/mini_games/slice/slice_game.tscn" id="3_menxj"]
+[ext_resource type="Texture2D" uid="uid://coo7llk5p30eo" path="res://assets/UI/Modern_UI_Style_1.png" id="4_6jsnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1p0e8"]
 radius = 16.0
@@ -17,5 +20,26 @@ script = ExtResource("2_menxj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetectionArea"]
 shape = SubResource("CircleShape2D_1p0e8")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("3_a013e")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_right = 192.0
+offset_bottom = 152.0
+texture = ExtResource("4_6jsnj")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="QuickSlice" parent="CanvasLayer/NinePatchRect" instance=ExtResource("3_menxj")]
+layout_mode = 1
+anchors_preset = -1
+
+[connection signal="start_game" from="." to="CanvasLayer" method="_on_cutting_board_start_game"]
+[connection signal="start_game" from="." to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_cutting_board_start_game"]
 [connection signal="body_entered" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_entered"]
 [connection signal="body_exited" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_exited"]
+[connection signal="minigame_finished" from="CanvasLayer/NinePatchRect/QuickSlice" to="CanvasLayer" method="_on_quick_slice_minigame_finished"]

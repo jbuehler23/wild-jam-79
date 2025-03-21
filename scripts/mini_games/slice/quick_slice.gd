@@ -19,13 +19,10 @@ var game_active = false
 @onready var game_timer: Timer = $GameTimer
 @onready var sequence_display_timer: Timer = $SequenceDisplayTimer
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	result_label.visible = false
-	start_game()
+signal minigame_finished(result)
 
 func start_game() -> void:
+	result_label.visible = false
 	game_active = true
 	player_input.clear()
 	key_sequence = generate_sequence(sequence_length)
@@ -88,7 +85,7 @@ func end_game(success):
 			
 	result_label.visible = true
 	key_sequence_label.visible = true
-	
+	minigame_finished.emit(true)
 
 
 func _on_timer_timeout() -> void:
@@ -98,3 +95,7 @@ func _on_timer_timeout() -> void:
 func _on_sequence_display_timer_timeout() -> void:
 	#hide the main key sequence
 	key_sequence_label.visible = false
+
+
+func _on_cutting_board_start_game() -> void:
+	start_game()
