@@ -21,7 +21,6 @@ script = ExtResource("2_menxj")
 shape = SubResource("CircleShape2D_1p0e8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("3_a013e")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
