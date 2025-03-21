@@ -12,10 +12,10 @@ var key_sequence = []
 var player_input = []
 var game_active = false
 
-@onready var key_sequence_label: Label = $KeySequenceLabel
-@onready var player_input_label: Label = $PlayerInputLabel
-@onready var result_label: Label = $ResultLabel
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var key_sequence_label: Label = $VBoxContainer/KeySequenceLabel
+@onready var player_input_label: Label = $VBoxContainer/PlayerInputLabel
+@onready var result_label: Label = $VBoxContainer/ResultLabel
+@onready var progress_bar: ProgressBar = $VBoxContainer/ProgressBar
 @onready var game_timer: Timer = $GameTimer
 @onready var sequence_display_timer: Timer = $SequenceDisplayTimer
 

@@ -1,8 +1,6 @@
 extends Sprite2D
 
 var player_in_zone = false
-@onready var quick_slice_game: Control = $MiniGameControl/QuickSlice
-@onready var mini_game_control: Control = $MiniGameControl
 
 signal start_game()
 

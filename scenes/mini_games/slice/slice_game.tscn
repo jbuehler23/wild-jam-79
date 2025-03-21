@@ -4,9 +4,8 @@
 
 [node name="QuickSlice" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.18125
+anchor_bottom = 0.222222
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bntst")
@@ -15,14 +14,16 @@ metadata/_edit_use_anchors_ = true
 [node name="KeySequenceLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.2
-anchor_right = 0.5
-anchor_bottom = 0.2
-offset_left = -160.0
-offset_top = -32.0
-offset_right = 168.0
-offset_bottom = 48.0
+anchor_left = 0.206552
+anchor_top = 0.05
+anchor_right = 0.827448
+anchor_bottom = 0.242
+offset_left = 0.0800018
+offset_right = 0.0319824
+offset_bottom = 1.28
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ResultLabel" type="Label" parent="."]
 layout_mode = 1
@@ -35,6 +36,7 @@ offset_left = -223.68
 offset_top = 63.68
 offset_right = 104.32
 offset_bottom = 143.68
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayerInputLabel" type="Label" parent="."]
 layout_mode = 1
@@ -47,6 +49,7 @@ offset_left = -199.68
 offset_top = -48.32
 offset_right = 128.32
 offset_bottom = 31.68
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -59,6 +62,7 @@ offset_left = 0.639984
 offset_top = 0.159973
 offset_right = 0.639954
 offset_bottom = 0.319977
+metadata/_edit_use_anchors_ = true
 
 [node name="GameTimer" type="Timer" parent="."]
 
