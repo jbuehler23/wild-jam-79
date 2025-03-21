@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://mcxy1ldgomoo"]
 
-[ext_resource type="TileSet" uid="uid://4xf5e3j5o3xw" path="res://scenes/game_scene/base_tiles.tres" id="1_2clg6"]
-[ext_resource type="TileSet" uid="uid://b720s3dn2deyu" path="res://scenes/game_scene/interior_tiles.tres" id="2_abrf8"]
+[ext_resource type="TileSet" uid="uid://4xf5e3j5o3xw" path="res://scenes/game_scene/tilesets/base_tiles.tres" id="1_2clg6"]
+[ext_resource type="TileSet" uid="uid://b720s3dn2deyu" path="res://scenes/game_scene/tilesets/interior_tiles.tres" id="2_abrf8"]
 [ext_resource type="PackedScene" uid="uid://h3wj1fpbdtim" path="res://scenes/characters/chef.tscn" id="3_ah068"]
 [ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="3_hno0e"]
 [ext_resource type="Texture2D" uid="uid://fqpw13r38cfr" path="res://assets/Modern Interiors/Rooms/Room_Builder_Floors_16x16.png" id="4_anl38"]

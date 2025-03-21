@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://3l6jplpcr20v"]
+
+[ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="1_1p0e8"]
+[ext_resource type="Script" uid="uid://c2uq3b5nqtqdi" path="res://scripts/interactive_objects/cutting_board.gd" id="2_menxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1p0e8"]
+radius = 16.0
+
+[node name="CuttingBoard" type="Sprite2D"]
+texture = ExtResource("1_1p0e8")
+region_enabled = true
+region_rect = Rect2(176, 560, 16, 16)
+script = ExtResource("2_menxj")
+
+[node name="InteractionDetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetectionArea"]
+shape = SubResource("CircleShape2D_1p0e8")
+
+[connection signal="body_entered" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_entered"]
+[connection signal="body_exited" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_exited"]
