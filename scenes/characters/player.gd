@@ -5,9 +5,13 @@ extends CharacterBody2D
 @export var SPEED: float = 80.0
 var facing := Vector2i.DOWN
 
+var _input_vector := Vector2.ZERO
+
+# TODO: Remove this, it's just temp!
+const _dialogue := preload("res://dialogue/test.dialogue")
+
 func _physics_process(_delta: float) -> void:
-	
-	var dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var dir := _input_vector
 	if dir:
 		velocity = dir * SPEED
 	else:
@@ -41,3 +45,10 @@ func _physics_process(_delta: float) -> void:
 				$AnimatedSprite2D.play("idle_up")
 			Vector2i.DOWN:
 				$AnimatedSprite2D.play("idle_down")
+
+func _unhandled_input(_event: InputEvent) -> void:
+	_input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+	# TODO: Remove this, it's just temp!
+	if Input.is_action_just_pressed("ui_accept"):
+		DialogueManager.show_dialogue_balloon(_dialogue, "start")
