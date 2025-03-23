@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://ytk6etnk4hfy"]
+
+[ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="1_iul0d"]
+[ext_resource type="Script" uid="uid://c2uq3b5nqtqdi" path="res://scripts/interactive_objects/cutting_board.gd" id="2_dirou"]
+[ext_resource type="Script" uid="uid://wcf4lks8ide" path="res://scripts/interactive_objects/canvas_layer.gd" id="3_5m3o0"]
+[ext_resource type="Theme" uid="uid://cexo5mqnssbho" path="res://resources/themes/modern_ui.tres" id="4_iul0d"]
+[ext_resource type="Script" uid="uid://ojkfslfarn56" path="res://scripts/mini_games/slice/quick_slice.gd" id="5_gaw3a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1p0e8"]
+radius = 16.0
+
+[node name="CuttingBoard" type="Sprite2D"]
+texture = ExtResource("1_iul0d")
+region_enabled = true
+region_rect = Rect2(176, 560, 16, 16)
+script = ExtResource("2_dirou")
+
+[node name="InteractionDetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetectionArea"]
+shape = SubResource("CircleShape2D_1p0e8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_5m3o0")
+
+[node name="NinePatchRect" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.269
+anchor_bottom = 0.277667
+offset_right = -0.320007
+offset_bottom = 0.0799866
+theme = ExtResource("4_iul0d")
+metadata/_edit_use_anchors_ = true
+
+[node name="QuickSlice" type="Control" parent="CanvasLayer/NinePatchRect"]
+layout_mode = 1
+anchor_left = 0.0833333
+anchor_top = 0.125
+anchor_right = 0.916667
+anchor_bottom = 0.875
+offset_right = 4.57764e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_gaw3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeySequenceLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerInputLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameTimer" type="Timer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+
+[node name="SequenceDisplayTimer" type="Timer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+
+[connection signal="start_game" from="." to="CanvasLayer" method="_on_cutting_board_start_game"]
+[connection signal="start_game" from="." to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_cutting_board_start_game"]
+[connection signal="body_entered" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_entered"]
+[connection signal="body_exited" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_exited"]
+[connection signal="timeout" from="CanvasLayer/NinePatchRect/QuickSlice/GameTimer" to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/NinePatchRect/QuickSlice/SequenceDisplayTimer" to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_sequence_display_timer_timeout"]
