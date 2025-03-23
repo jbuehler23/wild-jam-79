@@ -354,7 +354,7 @@ graph_offset = Vector2(-180.277, 49)
 theme = ExtResource("7_2k5l7")
 script = ExtResource("2_rr1rn")
 level_select_packed_scene = null
-game_scene_path = "res://scenes/game_scene/game_ui.tscn"
+game_scene_path = "uid://bhc1m1ighsmrp"
 options_packed_scene = ExtResource("3_sr523")
 credits_packed_scene = ExtResource("4_ixa71")
 
