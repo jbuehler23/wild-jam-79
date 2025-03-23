@@ -23,7 +23,7 @@ shape = SubResource("CircleShape2D_1p0e8")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_5m3o0")
 
-[node name="NinePatchRect" type="Panel" parent="CanvasLayer"]
+[node name="UIPanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_right = 0.269
 anchor_bottom = 0.277667
@@ -32,7 +32,7 @@ offset_bottom = 0.0799866
 theme = ExtResource("4_iul0d")
 metadata/_edit_use_anchors_ = true
 
-[node name="QuickSlice" type="Control" parent="CanvasLayer/NinePatchRect"]
+[node name="QuickSlice" type="Control" parent="CanvasLayer/UIPanel"]
 layout_mode = 1
 anchor_left = 0.0833333
 anchor_top = 0.125
@@ -43,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_gaw3a")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UIPanel/QuickSlice"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,30 +51,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="KeySequenceLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+[node name="KeySequenceLabel" type="Label" parent="CanvasLayer/UIPanel/QuickSlice/VBoxContainer"]
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UIPanel/QuickSlice/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="ResultLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+[node name="ResultLabel" type="Label" parent="CanvasLayer/UIPanel/QuickSlice/VBoxContainer"]
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayerInputLabel" type="Label" parent="CanvasLayer/NinePatchRect/QuickSlice/VBoxContainer"]
+[node name="PlayerInputLabel" type="Label" parent="CanvasLayer/UIPanel/QuickSlice/VBoxContainer"]
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="GameTimer" type="Timer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+[node name="GameTimer" type="Timer" parent="CanvasLayer/UIPanel/QuickSlice"]
 
-[node name="SequenceDisplayTimer" type="Timer" parent="CanvasLayer/NinePatchRect/QuickSlice"]
+[node name="SequenceDisplayTimer" type="Timer" parent="CanvasLayer/UIPanel/QuickSlice"]
 
 [connection signal="start_game" from="." to="CanvasLayer" method="_on_cutting_board_start_game"]
-[connection signal="start_game" from="." to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_cutting_board_start_game"]
+[connection signal="start_game" from="." to="CanvasLayer/UIPanel/QuickSlice" method="_on_cutting_board_start_game"]
 [connection signal="body_entered" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_entered"]
 [connection signal="body_exited" from="InteractionDetectionArea" to="." method="_on_interaction_detection_area_body_exited"]
-[connection signal="timeout" from="CanvasLayer/NinePatchRect/QuickSlice/GameTimer" to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_timer_timeout"]
-[connection signal="timeout" from="CanvasLayer/NinePatchRect/QuickSlice/SequenceDisplayTimer" to="CanvasLayer/NinePatchRect/QuickSlice" method="_on_sequence_display_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/UIPanel/QuickSlice/GameTimer" to="CanvasLayer/UIPanel/QuickSlice" method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/UIPanel/QuickSlice/SequenceDisplayTimer" to="CanvasLayer/UIPanel/QuickSlice" method="_on_sequence_display_timer_timeout"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckktfvbfaoyk5"]
+
+[ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="1_rl7da"]
+[ext_resource type="Script" uid="uid://wcf4lks8ide" path="res://scripts/interactive_objects/canvas_layer.gd" id="2_ts42a"]
+[ext_resource type="Theme" uid="uid://cexo5mqnssbho" path="res://resources/themes/modern_ui.tres" id="3_4bl6c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3ruo"]
+radius = 16.0
+
+[sub_resource type="Curve2D" id="Curve2D_jdbtf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 160, 32, 2.2579, -58.1408, -2.2579, 58.1408, 248, 96, 0, 0, 0, 0, 160, 152, -0.564474, 61.5277, 0.564474, -61.5277, 80, 88, 0, 0, 0, 0, 160, 32)
+}
+point_count = 5
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_rl7da")
+region_enabled = true
+region_rect = Rect2(128, 176, 16, 32)
+
+[node name="InteractionDetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetectionArea"]
+shape = SubResource("CircleShape2D_v3ruo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_ts42a")
+
+[node name="UIPanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.269
+anchor_bottom = 0.277667
+offset_right = -0.320007
+offset_bottom = 0.0799866
+theme = ExtResource("3_4bl6c")
+metadata/_edit_use_anchors_ = true
+
+[node name="OvenGame" type="Control" parent="CanvasLayer/UIPanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Path2D" type="Path2D" parent="CanvasLayer/UIPanel/OvenGame"]
+curve = SubResource("Curve2D_jdbtf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CanvasLayer/UIPanel/OvenGame/Path2D"]
+position = Vector2(160, 32)
+rotation = 0.628796
