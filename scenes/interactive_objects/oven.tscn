@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckktfvbfaoyk5"]
+[gd_scene load_steps=9 format=3 uid="uid://ckktfvbfaoyk5"]
 
-[ext_resource type="Script" uid="uid://wcf4lks8ide" path="res://scripts/interactive_objects/canvas_layer.gd" id="2_ts42a"]
 [ext_resource type="Script" uid="uid://dcckow7vyk5yt" path="res://scenes/interactive_objects/oven.gd" id="2_y3oep"]
 [ext_resource type="Theme" uid="uid://cexo5mqnssbho" path="res://resources/themes/modern_ui.tres" id="3_4bl6c"]
 [ext_resource type="Script" uid="uid://bngltjme1grbg" path="res://scripts/interactive_objects/oven_game.gd" id="4_ts42a"]
@@ -33,7 +32,6 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_y3oep")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("2_ts42a")
 
 [node name="UIPanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = -1
@@ -73,6 +71,7 @@ position = Vector2(160, 32)
 rotation = 0.628796
 
 [node name="ScoreMarker" type="Line2D" parent="CanvasLayer/UIPanel/OvenGame/Path2D"]
+joint_mode = 2
 
 [connection signal="start_game" from="." to="CanvasLayer" method="_on_oven_start_game"]
 [connection signal="start_game" from="." to="CanvasLayer/UIPanel/OvenGame" method="_on_oven_start_game"]
