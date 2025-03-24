@@ -3,3 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://dvqrbs177oosb" path="res://scenes/characters/npc.tscn" id="1_kn1hb"]
 
 [node name="Contestant1" instance=ExtResource("1_kn1hb")]
+collision_layer = 3

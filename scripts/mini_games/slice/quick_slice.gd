@@ -18,10 +18,17 @@ var game_active = false
 @onready var progress_bar: ProgressBar = $VBoxContainer/ProgressBar
 @onready var game_timer: Timer = $GameTimer
 @onready var sequence_display_timer: Timer = $SequenceDisplayTimer
-
+@onready var player_node = get_tree().get_first_node_in_group('player')
+@onready var canvas_layer = $"../.."
 signal minigame_finished(result)
 
+func _ready():
+	canvas_layer.visible = false
+
 func start_game() -> void:
+	player_node.in_minigame = true #Disables movement control and animations
+	canvas_layer.visible = true
+	key_sequence_label.visible = true
 	result_label.visible = false
 	game_active = true
 	player_input.clear()
@@ -48,6 +55,10 @@ func _process(delta):
 		progress_bar.value = game_timer.time_left
 	
 func _input(event) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		canvas_layer.visible = false
+		if game_active: end_game(false)
+	
 	if not game_active:
 		return
 	
@@ -68,7 +79,9 @@ func _input(event) -> void:
 				end_game(true)
 				
 
+
 func end_game(success):
+	player_node.in_minigame = false
 	game_active = false
 	game_timer.stop()
 	

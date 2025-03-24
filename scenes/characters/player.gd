@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export_category("Movement")
 @export var SPEED: float = 80.0
 var facing := Vector2i.DOWN
-
+var in_minigame: bool = false
 
 var _input_vector := Vector2.ZERO
 
@@ -24,14 +24,14 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	handle_interactions()
 	var dir := _input_vector
-	if dir:
-		velocity = velocity.move_toward(dir * SPEED, 20)
+	if dir and not in_minigame:
+		velocity = velocity.move_toward(dir * SPEED, 10)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, 20)
 
 	move_and_slide()
 
-	if dir:
+	if dir and not in_minigame:
 		if absf(dir.x) > absf(dir.y):
 			facing = Vector2i.RIGHT * signf(dir.x)
 		else:
@@ -62,19 +62,20 @@ func _physics_process(_delta: float) -> void:
 
 func _unhandled_input(_event: InputEvent) -> void:
 	_input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-
 	# TODO: Remove this, it's just temp!
 	if Input.is_action_just_pressed("ui_accept"):
 		DialogueManager.show_dialogue_balloon(_dialogue, "start")
 
 func handle_interactions(): #Updates the raycast and handles interactions
-	# Tried removing these two to fix the ray, but no luck
-	interaction_ray.target_position = facing * 40 #Setting direction for interaction
-	interaction_ray_target.position = interaction_ray.target_position #Positioning the raycast target marker
-	
-	if OS.is_debug_build(): print('Collider: ', interaction_ray.get_collider())
+	if in_minigame: return
 	if Input.is_action_just_pressed("interact"):
 		if interaction_ray.is_colliding(): #Checks if the raycast found a target
 			if OS.is_debug_build(): print('Tried interacting with ', interaction_ray.get_collider()) #Safe to remove
 			if interaction_ray.get_collider().has_method('interact'): #Checks if the target is interactable
 				interaction_ray.get_collider().interact() #Call the interact() method, containing all the logic
+				if OS.is_debug_build(): print('Interaction() found')
+			else: print('Target is missing Interaction() method')
+	
+	# Tried removing these two to fix the ray, but no luck
+	interaction_ray.target_position = facing * 40 #Setting direction for interaction
+	interaction_ray_target.position = interaction_ray.target_position #Positioning the raycast target marker
