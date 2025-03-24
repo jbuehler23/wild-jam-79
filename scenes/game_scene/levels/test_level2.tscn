@@ -1177,7 +1177,7 @@ tile_map_data = PackedByteArray("AAAQAAsACwABACcAAAAQAAwACwAPABgAAAARAAoACwABABE
 tile_set = ExtResource("4_damlv")
 
 [node name="CuttingBoard" parent="Tiles" instance=ExtResource("10_xnkj4")]
-position = Vector2(296, 201)
+position = Vector2(328, 243)
 
 [node name="Oven" parent="Tiles" instance=ExtResource("6_y73o4")]
 position = Vector2(280, 208)

@@ -14,9 +14,12 @@ func _process(delta: float) -> void:
 
 func _on_interaction_detection_area_body_entered(body: Node2D) -> void:
 	player_in_zone = true
-	print('Left the cutting board')
+	print('Close to the cutting board')
 
 
 func _on_interaction_detection_area_body_exited(body: Node2D) -> void:
 	player_in_zone = false
-	print('Close to the cutting board')
+	print('Left the cutting board')
+
+func interact():
+	start_game.emit()

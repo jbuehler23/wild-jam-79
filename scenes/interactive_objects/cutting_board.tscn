@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ojkfslfarn56" path="res://scripts/mini_games/slice/quick_slice.gd" id="5_6jsnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1p0e8"]
-radius = 16.0
+radius = 22.0227
 
 [node name="CuttingBoard" type="Sprite2D"]
 texture = ExtResource("1_1p0e8")
@@ -16,6 +16,8 @@ region_rect = Rect2(176, 560, 16, 16)
 script = ExtResource("2_menxj")
 
 [node name="InteractionDetectionArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetectionArea"]
 shape = SubResource("CircleShape2D_1p0e8")
