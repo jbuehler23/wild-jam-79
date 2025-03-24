@@ -1,9 +1,11 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var interaction_ray = $RayCast2D
 @export_category("Movement")
 @export var SPEED: float = 80.0
 var facing := Vector2i.DOWN
+
 
 var _input_vector := Vector2.ZERO
 
@@ -13,9 +15,9 @@ const _dialogue := preload("res://dialogue/test.dialogue")
 func _physics_process(_delta: float) -> void:
 	var dir := _input_vector
 	if dir:
-		velocity = dir * SPEED
+		velocity = velocity.move_toward(dir * SPEED, 20)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, 20)
 
 	move_and_slide()
 
