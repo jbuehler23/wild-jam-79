@@ -68,9 +68,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 		DialogueManager.show_dialogue_balloon(_dialogue, "start")
 
 func handle_interactions(): #Updates the raycast and handles interactions
-	#interaction_ray.target_position = facing * 40 #Setting direction for interaction
-	#interaction_ray_target.position = interaction_ray.target_position #Positioning the raycast target marker
-	if OS.is_debug_build(): print('Tried interacting with ', interaction_ray.get_collider())
+	# Tried removing these two to fix the ray, but no luck
+	interaction_ray.target_position = facing * 40 #Setting direction for interaction
+	interaction_ray_target.position = interaction_ray.target_position #Positioning the raycast target marker
+	
+	if OS.is_debug_build(): print('Collider: ', interaction_ray.get_collider())
 	if Input.is_action_just_pressed("interact"):
 		if interaction_ray.is_colliding(): #Checks if the raycast found a target
 			if OS.is_debug_build(): print('Tried interacting with ', interaction_ray.get_collider()) #Safe to remove
