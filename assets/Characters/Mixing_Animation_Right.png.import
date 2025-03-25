@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg142pbt02e2y"
-path="res://.godot/imported/Mixing_Animation_Right.png-84efd3bd2c6c1bb78872011605f2d0a7.ctex"
+path="res://.godot/imported/Mixing_Animation_Right.png-4605945577f5b6c3d6471db7a4221acc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mixing_Animation_Right.png"
-dest_files=["res://.godot/imported/Mixing_Animation_Right.png-84efd3bd2c6c1bb78872011605f2d0a7.ctex"]
+source_file="res://assets/Characters/Mixing_Animation_Right.png"
+dest_files=["res://.godot/imported/Mixing_Animation_Right.png-4605945577f5b6c3d6471db7a4221acc.ctex"]
 
 [params]
 

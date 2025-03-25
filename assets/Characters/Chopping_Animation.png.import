@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk4od0kg4l762"
-path="res://.godot/imported/Chopping_Animation.png-83e927cf1379d9df3cfc679b0b709df5.ctex"
+path="res://.godot/imported/Chopping_Animation.png-f72fd4a45cc549620a5fb770cd76565e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Chopping_Animation.png"
-dest_files=["res://.godot/imported/Chopping_Animation.png-83e927cf1379d9df3cfc679b0b709df5.ctex"]
+source_file="res://assets/Characters/Chopping_Animation.png"
+dest_files=["res://.godot/imported/Chopping_Animation.png-f72fd4a45cc549620a5fb770cd76565e.ctex"]
 
 [params]
 

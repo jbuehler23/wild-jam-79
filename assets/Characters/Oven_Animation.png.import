@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5sgecidbt0p1"
-path="res://.godot/imported/Ingredients_and_bakes.png-1e3d781dd63755d3163b034fdb3b607d.ctex"
+uid="uid://cpix22wha2i0f"
+path="res://.godot/imported/Oven_Animation.png-74b491ae2d41ef4982d599d4a9a628d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ingredients_and_bakes.png"
-dest_files=["res://.godot/imported/Ingredients_and_bakes.png-1e3d781dd63755d3163b034fdb3b607d.ctex"]
+source_file="res://assets/Characters/Oven_Animation.png"
+dest_files=["res://.godot/imported/Oven_Animation.png-74b491ae2d41ef4982d599d4a9a628d7.ctex"]
 
 [params]
 

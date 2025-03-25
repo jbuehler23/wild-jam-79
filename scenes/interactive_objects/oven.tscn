@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://cexo5mqnssbho" path="res://resources/themes/modern_ui.tres" id="3_4bl6c"]
 [ext_resource type="Script" uid="uid://bngltjme1grbg" path="res://scripts/interactive_objects/oven_game.gd" id="4_ts42a"]
 [ext_resource type="Script" uid="uid://c3fyrvtn2no3m" path="res://scenes/interactive_objects/sprite_mover.gd" id="5_4bl6c"]
-[ext_resource type="Texture2D" uid="uid://ce3juwce6p2eb" path="res://Star_filled.png" id="6_4bl6c"]
+[ext_resource type="Texture2D" uid="uid://ce3juwce6p2eb" path="res://assets/MerryPenguin/Star_filled.png" id="6_4bl6c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3ruo"]
 radius = 16.0
