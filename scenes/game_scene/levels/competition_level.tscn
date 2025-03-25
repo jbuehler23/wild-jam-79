@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://bhc1m1ighsmrp"]
+[gd_scene load_steps=17 format=4 uid="uid://bhc1m1ighsmrp"]
 
 [ext_resource type="TileSet" uid="uid://4xf5e3j5o3xw" path="res://scenes/game_scene/tilesets/base_tiles.tres" id="1_3epbw"]
+[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="1_dhure"]
+[ext_resource type="AudioStream" uid="uid://7p0pjhkapabv" path="res://assets/Audio/Music/song1/song1_stem1.ogg" id="2_6l58r"]
 [ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="2_yoesb"]
 [ext_resource type="Texture2D" uid="uid://fqpw13r38cfr" path="res://assets/Modern Interiors/Rooms/Room_Builder_Floors_16x16.png" id="3_y4apq"]
 [ext_resource type="TileSet" uid="uid://b720s3dn2deyu" path="res://scenes/game_scene/tilesets/interior_tiles.tres" id="4_damlv"]
@@ -1152,6 +1154,11 @@ sources/0 = SubResource("TileSetAtlasSource_p7a7s")
 sources/1 = SubResource("TileSetAtlasSource_bbjjs")
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("1_dhure")]
+stream = ExtResource("2_6l58r")
+volume_db = -8.0
+parameters/looping = false
 
 [node name="Tiles" type="Node2D" parent="."]
 

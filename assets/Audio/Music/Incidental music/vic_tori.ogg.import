@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d1q7mt8wde7m6"
+path="res://.godot/imported/vic_tori.ogg-2ed9f515678e1ee9b68c1943b56e793d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music/Incidental music/vic_tori.ogg"
+dest_files=["res://.godot/imported/vic_tori.ogg-2ed9f515678e1ee9b68c1943b56e793d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

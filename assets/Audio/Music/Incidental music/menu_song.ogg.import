@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blxnb13hvf1kb"
+path="res://.godot/imported/menu_song.ogg-422322fbb3854105b76efe6330936138.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music/Incidental music/menu_song.ogg"
+dest_files=["res://.godot/imported/menu_song.ogg-422322fbb3854105b76efe6330936138.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
