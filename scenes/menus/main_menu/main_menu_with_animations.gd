@@ -57,7 +57,8 @@ func _ready():
 
 func _setup_game_buttons():
 	super._setup_game_buttons()
-	if GameState.has_game_state():
+	# if GameState.has_game_state():
+	if false:
 		%ContinueGameButton.show()
 		if level_select_packed_scene != null and GameState.get_max_level_reached() > 0:
 			%LevelSelectButton.show()
