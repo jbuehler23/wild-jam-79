@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://cexo5mqnssbho"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cexo5mqnssbho"]
 
 [ext_resource type="Texture2D" uid="uid://coo7llk5p30eo" path="res://assets/UI/Modern_UI_Style_1.png" id="1_jxmg8"]
 [ext_resource type="FontFile" uid="uid://bx0hkcp7o8jhs" path="res://assets/Fonts/Kenney Mini.ttf" id="1_o53be"]
@@ -33,6 +33,14 @@ texture_margin_bottom = 3.0
 region_rect = Rect2(673, 624, 14, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwcue"]
+texture = ExtResource("1_jxmg8")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 7.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(8, 8, 32, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12uvt"]
 texture = ExtResource("1_jxmg8")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
@@ -100,6 +108,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_s2ekk")
 Button/styles/normal = SubResource("StyleBoxTexture_jxmg8")
 Button/styles/pressed = SubResource("StyleBoxTexture_o53be")
 Panel/styles/panel = SubResource("StyleBoxTexture_mwcue")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_12uvt")
 RichTextLabel/colors/default_color = Color(0.419608, 0.309804, 0.317647, 1)
 TabContainer/styles/panel = SubResource("StyleBoxFlat_odiue")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ghjya")
