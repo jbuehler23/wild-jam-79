@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var SPEED: float = 80.0
 var facing := Vector2i.DOWN
 var in_minigame: bool = false
+var interactable_object_buffer = null
 
 var _input_vector := Vector2.ZERO
 
@@ -68,7 +69,18 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func handle_interactions(): #Updates the raycast and handles interactions
 	if in_minigame: return
-	if Input.is_action_just_pressed("interact"):
+	
+	#Responsible for making interaction button hint visible
+	if interactable_object_buffer != interaction_ray.get_collider() and interactable_object_buffer:
+		interactable_object_buffer.get_node('E_icon').visible = false
+		interactable_object_buffer = null
+	if interaction_ray.is_colliding(): 
+		if interaction_ray.get_collider().has_node('E_icon'):
+			interaction_ray.get_collider().get_node('E_icon').visible = true
+			interactable_object_buffer = interaction_ray.get_collider()
+	
+	#Responsible for interaction with an object
+	if Input.is_action_just_pressed("interact"): 
 		if interaction_ray.is_colliding(): #Checks if the raycast found a target
 			if OS.is_debug_build(): print('Tried interacting with ', interaction_ray.get_collider()) #Safe to remove
 			if interaction_ray.get_collider().has_method('interact'): #Checks if the target is interactable

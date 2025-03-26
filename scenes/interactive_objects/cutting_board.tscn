@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://3l6jplpcr20v"]
+[gd_scene load_steps=7 format=3 uid="uid://3l6jplpcr20v"]
 
 [ext_resource type="Texture2D" uid="uid://cmo6oufx0xm7i" path="res://assets/Modern Interiors/Interiors/12_Kitchen_Black_Shadow_16x16.png" id="1_1p0e8"]
 [ext_resource type="Script" uid="uid://c2uq3b5nqtqdi" path="res://scripts/interactive_objects/cutting_board.gd" id="2_menxj"]
 [ext_resource type="Texture2D" uid="uid://coo7llk5p30eo" path="res://assets/UI/Modern_UI_Style_1.png" id="4_6jsnj"]
 [ext_resource type="Script" uid="uid://ojkfslfarn56" path="res://scripts/mini_games/slice/quick_slice.gd" id="5_6jsnj"]
+[ext_resource type="Texture2D" uid="uid://c0hc4wh1ep231" path="res://assets/UI/E.png" id="5_ogd6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jsnj"]
 
@@ -21,6 +22,7 @@ region_enabled = true
 region_rect = Rect2(176, 560, 16, 16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CuttingBoard"]
+visible = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CuttingBoard/CanvasLayer"]
 anchors_preset = -1
@@ -75,6 +77,11 @@ metadata/_edit_use_anchors_ = true
 [node name="GameTimer" type="Timer" parent="CuttingBoard/CanvasLayer/NinePatchRect/QuickSlice"]
 
 [node name="SequenceDisplayTimer" type="Timer" parent="CuttingBoard/CanvasLayer/NinePatchRect/QuickSlice"]
+
+[node name="E_icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(9, -5)
+texture = ExtResource("5_ogd6s")
 
 [connection signal="start_game" from="." to="CuttingBoard/CanvasLayer/NinePatchRect/QuickSlice" method="_on_cutting_board_start_game"]
 [connection signal="timeout" from="CuttingBoard/CanvasLayer/NinePatchRect/QuickSlice/GameTimer" to="CuttingBoard/CanvasLayer/NinePatchRect/QuickSlice" method="_on_timer_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3rjgusimnn7u" path="res://scenes/characters/player.gd" id="1_4i115"]
 [ext_resource type="SpriteFrames" uid="uid://bjbaadp750o2j" path="res://scenes/characters/chef_frames.tres" id="1_mmeqe"]
-[ext_resource type="Texture2D" uid="uid://ce3juwce6p2eb" path="res://Star_filled.png" id="3_4cd1b"]
+[ext_resource type="Texture2D" uid="uid://ce3juwce6p2eb" path="res://assets/MerryPenguin/Star_filled.png" id="3_4cd1b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4i115"]
 radius = 4.5
