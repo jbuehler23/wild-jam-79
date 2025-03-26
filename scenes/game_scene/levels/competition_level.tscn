@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bhc1m1ighsmrp"]
+[gd_scene load_steps=18 format=4 uid="uid://bhc1m1ighsmrp"]
 
 [ext_resource type="TileSet" uid="uid://4xf5e3j5o3xw" path="res://scenes/game_scene/tilesets/base_tiles.tres" id="1_3epbw"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="1_dhure"]
@@ -1153,6 +1153,12 @@ texture = ExtResource("3_y4apq")
 sources/0 = SubResource("TileSetAtlasSource_p7a7s")
 sources/1 = SubResource("TileSetAtlasSource_bbjjs")
 
+[sub_resource type="Curve2D" id="Curve2D_6l58r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, -56, -39, 0, 0, 0, 0, -40, 1, 0, 0, 0, 0, 8, -39, 0, 0, 0, 0, -24, -39, 0, 0, 0, 0, -8, -39, 0, 0, 0, 0, 64, -31, 0, 0, 0, 0, 64, 33, 0, 0, 0, 0, 64, 65, 0, 0, 0, 0, 32, 97)
+}
+point_count = 10
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("1_dhure")]
@@ -1201,7 +1207,6 @@ position = Vector2(576, 256)
 
 [node name="Contestant1" parent="YSort" instance=ExtResource("7_damlv")]
 position = Vector2(432, 255)
-collision_mask = 3
 
 [node name="Judge1" parent="YSort" instance=ExtResource("8_28t6n")]
 position = Vector2(400, 384)
@@ -1213,4 +1218,10 @@ position = Vector2(448, 384)
 position = Vector2(432, 272)
 zoom = Vector2(3, 3)
 
-[editable path="YSort/Contestant1"]
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(432, 255)
+curve = SubResource("Curve2D_6l58r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, 1)
+rotation = -2.52134

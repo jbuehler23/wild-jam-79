@@ -3,22 +3,23 @@ extends CharacterBody2D
 
 @export_category("Movement")
 @export var SPEED: float = 80.0
+@export var path_follow_2d: PathFollow2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var path_2d: Path2D = $Path2D
-@onready var path_follow_2d: PathFollow2D = $Path2D/PathFollow2D
 
 var last_position: Vector2
 var facing := Vector2i.DOWN
 var _input_vector := Vector2.ZERO
 
 func _ready() -> void:
-	position = path_follow_2d.global_position
+	if path_follow_2d:
+		position = path_follow_2d.global_position
 	last_position = position
 
 func _physics_process(_delta: float) -> void:
-	path_follow_2d.progress += SPEED * _delta
-	position = path_follow_2d.global_position
+	if path_follow_2d:
+		path_follow_2d.progress += SPEED * _delta
+		position = path_follow_2d.global_position
 	
 	var dir := position - last_position
 	if dir:
