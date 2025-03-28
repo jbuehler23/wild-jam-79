@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bgveides6oftl"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_r3mbo"]
+[ext_resource type="Texture2D" uid="uid://c1vy2knfu3mqp" path="res://resources/cooking/sprite_atlas.tres" id="2_hjne1"]
+
+[resource]
+script = ExtResource("1_r3mbo")
+name = "eggs"
+texture = ExtResource("2_hjne1")
+metadata/_custom_type_script = "uid://br1drl40r2k3"
