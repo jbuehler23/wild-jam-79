@@ -1205,8 +1205,9 @@ collision_mask = 3
 [node name="Contestant3" parent="YSort" instance=ExtResource("7_y4apq")]
 position = Vector2(576, 256)
 
-[node name="Contestant1" parent="YSort" instance=ExtResource("7_damlv")]
+[node name="Contestant1" parent="YSort" node_paths=PackedStringArray("path_follow_2d") instance=ExtResource("7_damlv")]
 position = Vector2(432, 255)
+path_follow_2d = NodePath("../../Path2D/PathFollow2D")
 
 [node name="Judge1" parent="YSort" instance=ExtResource("8_28t6n")]
 position = Vector2(400, 384)

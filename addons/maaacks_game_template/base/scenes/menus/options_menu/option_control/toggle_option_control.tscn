@@ -6,3 +6,4 @@
 
 [node name="CheckButton" type="CheckButton" parent="." index="1"]
 layout_mode = 2
+focus_mode = 0

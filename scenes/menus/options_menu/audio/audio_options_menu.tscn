@@ -8,4 +8,5 @@
 script = ExtResource("2_5s0c0")
 
 [node name="AudioInputOptionControl" parent="VBoxContainer" index="2" instance=ExtResource("3_8h5wm")]
+visible = false
 layout_mode = 2
