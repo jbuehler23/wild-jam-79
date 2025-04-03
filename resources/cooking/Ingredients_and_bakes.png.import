@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5sgecidbt0p1"
-path="res://.godot/imported/Ingredients_and_bakes.png-52646763238eb3fc283e18fb93312fdd.ctex"
+path="res://.godot/imported/Ingredients_and_bakes.png-e1c8818892c68ec15f55a8037bab4269.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MerryPenguin/Ingredients_and_bakes.png"
-dest_files=["res://.godot/imported/Ingredients_and_bakes.png-52646763238eb3fc283e18fb93312fdd.ctex"]
+source_file="res://resources/cooking/Ingredients_and_bakes.png"
+dest_files=["res://.godot/imported/Ingredients_and_bakes.png-e1c8818892c68ec15f55a8037bab4269.ctex"]
 
 [params]
 

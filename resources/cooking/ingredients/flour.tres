@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://02ia1eysnw8r"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_cpgx4"]
+[ext_resource type="Texture2D" uid="uid://b5sgecidbt0p1" path="res://resources/cooking/Ingredients_and_bakes.png" id="2_inanv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpgx4"]
+atlas = ExtResource("2_inanv")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_cpgx4")
+name = "flour"
+texture = SubResource("AtlasTexture_cpgx4")
+metadata/_custom_type_script = "uid://br1drl40r2k3"

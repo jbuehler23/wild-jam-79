@@ -1,9 +1,103 @@
-[gd_scene format=3 uid="uid://dh77mi5eh3661"]
+[gd_scene load_steps=10 format=3 uid="uid://dh77mi5eh3661"]
 
-[node name="CookingManager" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Theme" uid="uid://cexo5mqnssbho" path="res://resources/themes/modern_ui.tres" id="1_s1whs"]
+[ext_resource type="PackedScene" uid="uid://b61fofr48gx6u" path="res://scenes/menus/crafting/recipe_slot.tscn" id="2_6dwl6"]
+[ext_resource type="Script" uid="uid://102cfqkydo4p" path="res://scenes/menus/crafting/cooking_manager.gd" id="2_oik2v"]
+[ext_resource type="PackedScene" uid="uid://cy3fj4w7i4ple" path="res://scenes/menus/crafting/ingredient_slot.tscn" id="2_ydsiv"]
+[ext_resource type="Resource" uid="uid://duiqg0x6n5f7x" path="res://resources/cooking/ingredients/cheese.tres" id="3_q7nl7"]
+[ext_resource type="Resource" uid="uid://ccnijc7wk1d8r" path="res://resources/cooking/ingredients/cream.tres" id="3_t2636"]
+[ext_resource type="Resource" uid="uid://bgveides6oftl" path="res://resources/cooking/ingredients/eggs.tres" id="4_q7nl7"]
+[ext_resource type="Resource" uid="uid://02ia1eysnw8r" path="res://resources/cooking/ingredients/flour.tres" id="5_6dwl6"]
+[ext_resource type="Resource" uid="uid://dxd8n03tb0l4k" path="res://resources/cooking/ingredients/sugar.tres" id="6_oik2v"]
+
+[node name="CookingManager" type="PanelContainer"]
+offset_right = 99.0
+offset_bottom = 97.0
+size_flags_horizontal = 6
+theme = ExtResource("1_s1whs")
+script = ExtResource("2_oik2v")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Ingredients"
+horizontal_alignment = 1
+
+[node name="RecipeSlot" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_6dwl6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ScoreMultiplierLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "Score Multiplier: "
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_s1whs")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Cheese" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_ydsiv")]
+layout_mode = 2
+ingredient = ExtResource("3_q7nl7")
+
+[node name="Cream" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_ydsiv")]
+layout_mode = 2
+ingredient = ExtResource("3_t2636")
+
+[node name="Eggs" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_ydsiv")]
+layout_mode = 2
+ingredient = ExtResource("4_q7nl7")
+
+[node name="Flour" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_ydsiv")]
+layout_mode = 2
+ingredient = ExtResource("5_6dwl6")
+
+[node name="Sugar" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_ydsiv")]
+layout_mode = 2
+ingredient = ExtResource("6_oik2v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(82, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Exit
+"
+
+[node name="CraftButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(82, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Cook!
+"
