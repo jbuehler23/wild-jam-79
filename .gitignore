@@ -22,3 +22,6 @@ Exports/
 .idea/
 .vscode/
 .DS_Store
+
+# Uncomment if pushing into main
+#test/assets
