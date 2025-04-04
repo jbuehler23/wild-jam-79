@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=10 format=3 uid="uid://ek6iwghliadj"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_mj37y"]
+[ext_resource type="Resource" uid="uid://bgveides6oftl" path="res://resources/cooking/ingredients/eggs.tres" id="2_x422o"]
+[ext_resource type="Script" uid="uid://bsapalcih2r4i" path="res://resources/cooking/recipes/recipe_resource.gd" id="2_yqdkh"]
+[ext_resource type="Resource" uid="uid://duiqg0x6n5f7x" path="res://resources/cooking/ingredients/cheese.tres" id="3_7d2l0"]
+[ext_resource type="Resource" uid="uid://02ia1eysnw8r" path="res://resources/cooking/ingredients/flour.tres" id="4_su047"]
+[ext_resource type="Resource" uid="uid://ccnijc7wk1d8r" path="res://resources/cooking/ingredients/cream.tres" id="5_iadi0"]
+[ext_resource type="Resource" uid="uid://dxd8n03tb0l4k" path="res://resources/cooking/ingredients/sugar.tres" id="6_su047"]
+[ext_resource type="Texture2D" uid="uid://b5sgecidbt0p1" path="res://resources/cooking/Ingredients_and_bakes.png" id="7_7d2l0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su047"]
+atlas = ExtResource("7_7d2l0")
+region = Rect2(80, 112, 16, 16)
+
+[resource]
+script = ExtResource("2_yqdkh")
+name = "cheesecake"
+ingredients = Array[ExtResource("1_mj37y")]([ExtResource("3_7d2l0"), ExtResource("5_iadi0"), ExtResource("2_x422o"), ExtResource("4_su047"), ExtResource("6_su047")])
+score_multiplier = 1.0
+texture = SubResource("AtlasTexture_su047")
+metadata/_custom_type_script = "uid://bsapalcih2r4i"

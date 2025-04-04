@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://duiqg0x6n5f7x"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_386yx"]
+[ext_resource type="Texture2D" uid="uid://de0chp50udr0o" path="res://resources/cooking/ingredients/cheese_texture.tres" id="2_yduc3"]
+
+[resource]
+script = ExtResource("1_386yx")
+name = "cheese"
+texture = ExtResource("2_yduc3")
+metadata/_custom_type_script = "uid://br1drl40r2k3"

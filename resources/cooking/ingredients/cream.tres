@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://ccnijc7wk1d8r"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_2rvc3"]
+[ext_resource type="Texture2D" uid="uid://b5sgecidbt0p1" path="res://resources/cooking/Ingredients_and_bakes.png" id="2_k4ga8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xcyp"]
+atlas = ExtResource("2_k4ga8")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_2rvc3")
+name = "cream"
+texture = SubResource("AtlasTexture_2xcyp")
+metadata/_custom_type_script = "uid://br1drl40r2k3"

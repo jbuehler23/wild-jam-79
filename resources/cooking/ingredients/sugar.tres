@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://dxd8n03tb0l4k"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_88f4f"]
+[ext_resource type="Texture2D" uid="uid://b5sgecidbt0p1" path="res://resources/cooking/Ingredients_and_bakes.png" id="2_idsb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqyhj"]
+atlas = ExtResource("2_idsb3")
+region = Rect2(16, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_88f4f")
+name = "sugar"
+texture = SubResource("AtlasTexture_rqyhj")
+metadata/_custom_type_script = "uid://br1drl40r2k3"

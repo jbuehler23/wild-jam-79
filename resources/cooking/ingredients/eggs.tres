@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://bgveides6oftl"]
+
+[ext_resource type="Script" uid="uid://br1drl40r2k3" path="res://resources/cooking/ingredients/ingredient_resource.gd" id="1_r3mbo"]
+[ext_resource type="Texture2D" uid="uid://b5sgecidbt0p1" path="res://resources/cooking/Ingredients_and_bakes.png" id="2_hjne1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62efb"]
+atlas = ExtResource("2_hjne1")
+region = Rect2(80, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_r3mbo")
+name = "eggs"
+texture = SubResource("AtlasTexture_62efb")
+metadata/_custom_type_script = "uid://br1drl40r2k3"
