@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://vg733sqgo32g"]
+[gd_scene load_steps=15 format=3 uid="uid://vg733sqgo32g"]
 
 [ext_resource type="Script" uid="uid://dlc7jbdm33dky" path="res://test_assets/fruit_ninja.gd" id="1_7o3lq"]
-[ext_resource type="Shader" uid="uid://tb64ee6l2fsf" path="res://test_assets/Fruit_ninja.gdshader" id="1_yku1m"]
-[ext_resource type="Texture2D" uid="uid://be68b5rit53n8" path="res://test_assets/strawberry.png" id="2_7o3lq"]
+[ext_resource type="PackedScene" uid="uid://c77y30jtu01js" path="res://test_assets/fruit/strawberry.tscn" id="2_7o3lq"]
 [ext_resource type="Script" uid="uid://6u8owblnoenh" path="res://test_assets/slicer.gd" id="2_u7vmo"]
+[ext_resource type="PackedScene" uid="uid://bb4v8h54l0j5x" path="res://test_assets/fruit/lemon.tscn" id="3_3mo5p"]
+[ext_resource type="PackedScene" uid="uid://cjfn01k8tx2uq" path="res://test_assets/fruit/watermelon.tscn" id="4_mrq5i"]
 [ext_resource type="AudioStream" uid="uid://bg2cdw80m5u5" path="res://test_assets/chop.mp3" id="5_mrq5i"]
 
 [sub_resource type="Gradient" id="Gradient_kd16s"]
@@ -13,12 +14,6 @@ colors = PackedColorArray(1, 0.808011, 0.533734, 1, 0.74026, 0.74026, 0.74026, 1
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u7vmo"]
 gradient = SubResource("Gradient_kd16s")
 fill_to = Vector2(1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yku1m"]
-shader = ExtResource("1_yku1m")
-shader_parameter/A = Vector2(0, 0)
-shader_parameter/B = Vector2(-1.14, 0.5)
-shader_parameter/bottom = true
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kd16s"]
 
@@ -37,8 +32,12 @@ stream_0/stream = ExtResource("5_mrq5i")
 [sub_resource type="LabelSettings" id="LabelSettings_3mo5p"]
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mrq5i"]
+font_color = Color(0, 0, 0, 1)
+
 [node name="FruitNinja" type="Node2D"]
 script = ExtResource("1_7o3lq")
+fruit = Array[PackedScene]([ExtResource("2_7o3lq"), ExtResource("3_3mo5p"), ExtResource("4_mrq5i")])
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(300, -50)
@@ -48,23 +47,6 @@ centered = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
-
-[node name="Fruit" type="RigidBody2D" parent="." groups=["fruits"]]
-position = Vector2(1114, 904)
-collision_layer = 7
-collision_mask = 0
-mass = 0.1
-gravity_scale = 0.5
-inertia = 0.1
-metadata/_edit_group_ = true
-
-[node name="Sprite" type="Sprite2D" parent="Fruit"]
-material = SubResource("ShaderMaterial_yku1m")
-texture = ExtResource("2_7o3lq")
-
-[node name="Collision" type="CollisionPolygon2D" parent="Fruit"]
-modulate = Color(1, 1, 1, 0.717647)
-polygon = PackedVector2Array(-28, -53, 41, -48, 56, -14, 45, 26, 5, 50, -36, 53, -48, 33, -47, -5)
 
 [node name="Slicer" type="Node2D" parent="."]
 script = ExtResource("2_u7vmo")
@@ -114,7 +96,7 @@ position = Vector2(641, 374)
 stream = SubResource("AudioStreamRandomizer_5xtun")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
-position = Vector2(656, 789)
+position = Vector2(620, 852)
 current = true
 
 [node name="DebuggingControls" type="Control" parent="."]
@@ -133,6 +115,14 @@ text = "[E] Stop movement
 [S] Stop spawning
 [SPACE] Cut"
 label_settings = SubResource("LabelSettings_3mo5p")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 814.0
+offset_top = 4.0
+offset_right = 959.0
+offset_bottom = 27.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_mrq5i")
 
 [connection signal="body_entered" from="PlayArea" to="." method="_on_fruit_leaving_area"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
